@@ -1,0 +1,305 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #627b47;
+  padding: 18px 10%;
+  color: #fff;
+}
+
+.navbar nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar a {
+  font-size: 1.5rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.navbar nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.navbar nav a:hover {
+  color: #f2f2f2;
+  text-decoration: underline;
+}
+
+.about-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+  flex: 1;
+  gap: 20px;
+}
+
+.content {
+  flex: 1;
+}
+
+.content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #627b47;
+}
+
+.content p {
+  font-size: 1rem;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.content p > span {
+  color: #627b47;
+  font-weight: 600;
+}
+
+.content p > a {
+  color: #627b47;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.content p > a:hover {
+  color: #4a5e35;
+  text-decoration: underline;
+}
+
+.about-img {
+  flex: 1;
+}
+
+.about-img img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+}
+
+.create-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.create-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #627b47;
+  margin-top: 10px;
+}
+.create-form {
+  width: 100%;
+  max-width: 700px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #f2f2f2;
+  margin-top: 10px;
+}
+.create-form .twoInputs {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+.twoInputs div {
+  flex: 1;
+}
+.create-form input,
+.create-form textarea {
+  width: 100%;
+  padding: 14px 12px;
+  margin-bottom: 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  outline: none;
+  margin-top: 10px;
+}
+
+.create-form input:focus,
+.create-form textarea:focus {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.create-form label {
+  font-size: 1.1rem;
+  color: #627b47;
+  font-weight: 600;
+}
+
+.create-form button {
+  padding: 14px 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: #627b47;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease;
+  margin: 10px 0;
+}
+
+.create-form button:hover {
+  background-color: #4a5e35;
+}
+
+.home-section {
+  padding: 20px 10%;
+  flex: 1;
+}
+.home-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #627b47;
+}
+
+.hero-section {
+  background: url("/hero1.jpg") no-repeat center center/cover;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #f2f2f2;
+  margin-top: 20px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+}
+
+.hero-content {
+  z-index: 1;
+  max-width: 700px;
+}
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+.hero-content p {
+  font-size: 1rem;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.plants-ctn {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.plant-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #f2f2f2;
+  margin-top: 20px;
+  width: 350px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.plant-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+}
+
+.plant-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.plant-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.plant-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.plant-heading h2 {
+  font-size: 1.5rem;
+  color: #627b47;
+}
+
+.plant-heading p {
+  font-size: 1rem;
+  color: #627b47;
+  font-weight: 600;
+}
+
+.rating {
+  position: absolute;
+  top: 25px;
+  right: 28px;
+}
+.details {
+  font-size: 0.9rem;
+}
+
+footer {
+  background-color: #627b47;
+  color: #fff;
+  padding: 20px 10%;
+  text-align: center;
+  margin-top: 20px;
+}
+footer p {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 4px 0;
+}

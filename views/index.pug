@@ -1,0 +1,37 @@
+doctype html
+html
+  head
+    title Flora and Fern
+    link(rel="stylesheet" href="/styles.css")
+  body
+    div.navbar
+        a(href="/") 💐 Flora and Fern
+        nav 
+            a(href="/") Home
+            a(href="/create") Add a Plant
+            a(href="/about") About 
+    section.home-section
+        div.hero-section
+            div.hero-content
+                h1 Welcome to Flora and Fern
+                h3 Explore our curated collection of indoor plants and garden essentials, carefully selected to elevate any space. 
+        h1 Popular Plants
+        div.plants-ctn
+            each plant in plants
+                .plant-card
+                    img(src=plant.image)
+                    div.plant-info
+                        div.plant-heading
+                            h2= plant.name
+                            p #{plant.price} CAD
+                        p.details  ☀️ Sunlight Requirement: #{plant.sunlightRequirement}
+                        p.details 🌱 Soil Type: #{plant.soilType}
+                        p= plant.description.substring(0, 100) + '...'
+                        p.rating 
+                            each star in Array(plant.rating)
+                                span ⭐
+
+    //footer
+    footer
+        p © 2024 Flora and Fern
+        p Made with ❤️ by Flora and Fern

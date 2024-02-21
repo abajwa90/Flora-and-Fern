@@ -1,0 +1,40 @@
+doctype html
+html
+  head
+    title Create | Flora and Fern
+    link(rel="stylesheet" href="/styles.css")
+  body
+    div.navbar
+        a(href="/") 💐 Flora and Fern
+        nav 
+            a(href="/") Home
+            a(href="/create") Add a Plant
+            a(href="/about") About 
+    section.create-section 
+        h1 Add a Plant
+        form(action="/create" method="post" enctype="multipart/form-data").create-form
+            div.twoInputs
+                div 
+                    label(for="name") Name:
+                    input(type="text" name="name" id="name" placeholder="Enter plant name" required)
+                div
+                    label(for="price") Price:
+                    input(type="number" name="price" id="price" placeholder="Enter price" required)
+            div.twoInputs
+                div 
+                    label(for="sunlightRequirement") Sunlight Requirement:
+                    input(type="text" name="sunlightRequirement" id="sunlightRequirement" placeholder="Add sunlight requirement" required)
+                div
+                    label(for="soilType") Soil Type:
+                    input(type="text" name="soilType" id="soilType" placeholder="Add soil type" required)
+            label(for="rating") Rating: 
+            input(type="number" name="rating" id="rating" placeholder="Enter rating" required min="1" max="5")
+            label(for="image") Image:
+            input(type="file" name="image" id="image" placeholder="Enter image url" required)
+            label(for="description") Description:
+            textarea(name="description" id="description" placeholder="Enter description" required)
+            button(type="submit") Add
+    //footer
+    footer
+        p © 2024 Flora and Fern
+        p Made with ❤️ by Flora and Fern
