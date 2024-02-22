@@ -14,7 +14,7 @@ An online plant store web app made with Node.js, Express.js, Multer.js, Pug.js, 
 
 ## Demo
 
-
+<img width="1465" alt="Screenshot 2024-02-21 at 6 42 43 PM" src="https://github.com/abajwa90/Flora-and-Fern/assets/110785651/c4afca3b-f6f0-4824-a78d-b75469e4c37f">
 
 ## Authors
 
