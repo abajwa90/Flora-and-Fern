@@ -1,17 +1,52 @@
 const express = require("express");
+const path = require("path");
+const expressSession = require("express-session");
+const passport = require("passport");
+const Auth0Strategy = require("passport-auth0");
 const mongoose = require("mongoose");
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8000;
 const dotenv = require("dotenv");
 const Plant = require("./model/plant-model");
 const { upload } = require("./config/multer");
+const { auth } = require('express-openid-connect');
+const config = {
+  authRequired: false,
+  auth0Logout: true,
+  secret: 'a long, randomly-generated string stored in env',
+  baseURL: 'http://localhost:3000',
+  clientID: 'NYWhqToKDsnwmkw8QgOg1pMfqyf5h7MH',
+  issuerBaseURL: 'https://dev-1kqtfitbng6kcnaa.us.auth0.com'
+};
 
+require("dotenv").config();
+
+//DB connection string 
 mongoose.connect(
   'mongodb+srv://flora-and-fern:T3Fs0ih3HxDCLJAU@flora-and-fern.yhfwse9.mongodb.net/flora-and-fern',
 );
 
+//Session Configuration
+const session = {
+  secret: process.env.SESSION_SECRET,
+  cookie: {},
+  resave: false,
+  saveUninitialized: false
+};
+
+if (app.get("env") === "production") {
+  // Serve secure cookies, requires HTTPS
+  session.cookie.secure = true;
+}
+
+//Passport Configuration
+
+
+
+//App Configuration
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
+app.use(auth(config));
 app.set("view engine", "pug");
 
 app.get("/", async (req, res) => {
@@ -25,6 +60,10 @@ app.get("/create", (req, res) => {
 
 app.get("/about", (req, res) => {
   res.render("about");
+});
+
+app.get('/', (req, res) => {
+  res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
 });
 
 app.post("/create", upload.single("image"), async (req, res) => {
