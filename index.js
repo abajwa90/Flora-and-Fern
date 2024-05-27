@@ -23,7 +23,7 @@ require("dotenv").config();
 
 //DB connection string 
 mongoose.connect(
-  'mongodb+srv://flora-and-fern:T3Fs0ih3HxDCLJAU@flora-and-fern.yhfwse9.mongodb.net/flora-and-fern',
+  process.env.DB_CONNECT_STRING
 );
 
 //Session Configuration
